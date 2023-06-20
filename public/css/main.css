@@ -1,0 +1,13 @@
+.bg-color {
+    background-color: rgb(177, 234, 107);
+    border-radius: var(--bs-border-radius) !important;
+}
+
+.textinput {
+    height: 7vh;
+    font-size: 3vh;
+}
+
+.error{
+    color:red;
+}
