@@ -49,7 +49,7 @@
                             <button class="btn h-100 button" style="background-color:#FE5652; color:white;">Sign In</button>
                         </div>
                         <div class="row text-center pt-4">
-                            <a href="#" style="color:#FE5652; text-decoration:none;font-size: 18px">Forgot Password</a>
+                            <a href="#" style="color:#FE5652; text-decoration:none;font-size: 18px">Forgot Password!</a>
                         </div>
                         
                         <div class="row pt-4 px-3">
