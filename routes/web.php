@@ -14,6 +14,10 @@ Route::get('/hello',function(){
     return view('hello');
 });
 
+Route::get('/tnc',function(){
+    return view('tnc');
+});
+
 Route::get('auth/google',[GoogleAuthController::class,'redirect'])->name('google-auth');
 
 Route::get('auth/google/call-back',[GoogleAuthController::class,'callbackGoogle']);
