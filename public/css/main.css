@@ -1,13 +1,21 @@
-.bg-color {
-    background-color: rgb(177, 234, 107);
-    border-radius: var(--bs-border-radius) !important;
+.round-button{
+    border-radius: 100px;
+   
+    font-size: 16px;
+
 }
 
-.textinput {
-    height: 7vh;
-    font-size: 3vh;
+.img-01{
+    
+    width: 164px;
+    height: auto;
 }
 
-.error{
-    color:red;
+.but-align{
+    padding-left: 5px;
+}
+
+.img-03{
+    background-image: url("public/images/img-03.jpg");
+    background-repeat : no-repeat;
 }
