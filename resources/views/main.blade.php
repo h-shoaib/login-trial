@@ -12,54 +12,60 @@
 
 <body>
     <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-10 col-lg-10 py-4">
-                    <img class="img-01" src="public/images/edifice-logo.jpg" alt="logo">
+        <div class="container-fluid">
+            <div class="row px-5" style="border-bottom: 1px solid #ececec;">
+                <div class="col-12 col-md-8 col-lg-8 p-3">
+                    <img class="img-01" src="{{ asset('images/edifice-logo.jpg') }}" alt="logo">
                 </div>
-                <div class="col-12 col-md-2 col-lg-2 py-4 but-align">
-                    <button type="button" class="btn btn-outline-dark round-button">Create account</button>
+                <div class="col-12 col-md-4 col-lg-4 py-4 but-align">
+                    <button type="button" class="round-button btn btn-outline-dark ">Create account</button>
                 </div>
             </div>
         </div>
     </header>
-    <section class="img-03">
-        <div class="container">
+    <section class="img-03" style="background-image: url(asset('images/img-03.jpg');">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-12 col-md-8 col-lg-8 py-3" >
-
-                    <h1>Build Your Unique Online Presence</h1> <br>
-                    Create your own website, by simple steps <br>
-                    <img src="app/public/images/img-02.jpg" alt="img-2">
-
+                <div class="col-12 col-md-8 col-lg-8 p-3" >
+                    <div class="px-5">
+                    <h1 style="font-size:50px;font-weight:bold;">Build Your Unique Online Presence</h1> <br>
+                    <p style="font-size:25px;color:grey;">Create your own website, by simple steps </p><br>
+                    <img src="{{ asset('images/img-02.jpg') }}" alt="img-2">
+                    </div>
                 </div>
-                <div class="col-12 col-md-4 col-lg-4 py-3" style="background-color:#FCF5E5">
-                    <div class="row">
+                <div class="signin col-12 col-md-4 col-lg-4 py-3" style="background-color:#FCF5E5">
+                    <div class="signin_inside">
+                    <div class="row pb-4">
                         <h4>Sign in to your account</h4>
                     </div>
                     <form>
                         <div class="row py-2 px-3">
-                            <input class="form-control" type="text" placeholder="Name">
+                            <input class="form-control frm" type="text" placeholder="Name" name="name" id="name">
                         </div>
                         <div class="row py-2 px-3">
-                            <input class="form-control" type="Email" placeholder="Email">
+                            <input class="form-control frm" type="email" placeholder="Email" name="email" id="email">
                         </div>
-                        <div class="row pt-4 px-3 pt-2">
-                            <button class="btn" style="background-color:#FE5652; color:white;">Sign In</button>
+                        <div class="row pt-4 px-3">
+                            <button class="btn h-100 button" style="background-color:#FE5652; color:white;">Sign In</button>
                         </div>
-                        <div class="row text-center pt-2">
-                            <a href="#" style="color:#FE5652; text-decoration:none;">Forgot Password</a>
+                        <div class="row text-center pt-4">
+                            <a href="#" style="color:#FE5652; text-decoration:none;font-size: 18px">Forgot Password</a>
                         </div>
                         
-                        <div class="row pt-4 px-3 pt-2">
-                            <button class="btn" style="background-color:#4285f4; color:white;">
-                            <a class="btnRounded" href="{{route('google-auth')}}" 
-                            style="text-decoration:none">Sign in with google</a></button>
+                        <div class="row pt-4 px-3">
+                            <a class="btn h-100 button" href="{{route('google-auth')}}" style="background-color:#4285f4; color:white;">
+                                <span class="google_logo">
+                                    <img src="{{asset('images/google-image.png')}}" alt="google-image">
+                                </span>
+                                <span>Sign in with Google</span>
+                            </a>
                         </div>
+                        
                             
                         
 
                     </form>
+                    </div>
                 </div>
             </div>
         </div>
