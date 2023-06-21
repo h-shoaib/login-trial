@@ -24,7 +24,6 @@ $(document).ready(function () {
         $("button[type = 'submit']").on("click", function () {
             $("#formval").validate({
                 rules: {
-                    company_name: "required",
                     first_name: "required",
                     last_name: "required",
                     email: {
@@ -43,6 +42,9 @@ $(document).ready(function () {
                     confirmpassword: {
                         required: true,
                         equalTo: "#password"
+                    },
+                    termsagree:{
+                        required:true
                     }
                 },
 

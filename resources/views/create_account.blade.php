@@ -47,24 +47,26 @@
                     <div class="row pb-4">
                         <h3><b>Create account</b></h3>
                     </div>
-                    <form id="formval">
+                    <form id="formval" action="/signup" method="post">
+                        @csrf
                         <div class="row py-2 px-3">
                             <input class="form-control frm" type="text" placeholder="Company name" name="company_name" id="company_name">
                         </div>
                         <div class="row py-2 px-3">
-                            <input class="form-control frm" type="text" placeholder="First name" name="first_name" id="first_name">
+                            <input class="form-control frm" type="text" placeholder="First name*" name="first_name" id="first_name">
                         </div>
                         <div class="row py-2 px-3">
-                            <input class="form-control frm" type="text" placeholder="Last name" name="last_name" id="last_name">
+                            <input class="form-control frm" type="text" placeholder="Last name*" name="last_name" id="last_name">
                         </div>
                         <div class="row py-2 px-3">
-                            <input class="form-control frm" type="email" placeholder="Email" name="email" id="email">
+                            <input class="form-control frm" type="email" placeholder="Email*" name="email" id="email">
                         </div>
                         <div class="row py-2 px-3">
-                            <input class="form-control frm" type="text" placeholder="Password" name="password" id="password">
+                            <input class="form-control frm" type="text" placeholder="Password*" name="password" id="password">
                         </div>
-                        <input type="radio" id="termsagree" value="1" name="TermsAgree">
+                        <input type="radio" id="termsagree" value="1" name="termsagree">
                         <label >I agree to the <a href="{{ asset('tnc')}}">Terms and Conditions and Privacy Policy</a></label>
+                        <label id="termsagree-error" class="error" for="termsagree"></label>
                         <div class="row pt-4 px-3">
                             <button type="submit" class="btn h-100 button" style="background-color:#FE5652; color:white;">Create an account</button>
                         </div>

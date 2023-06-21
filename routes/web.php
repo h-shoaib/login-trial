@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use app\Http\Controllers\formHandle;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SignupController;
 
 Route::get('/main', function () {
     return view('main');
