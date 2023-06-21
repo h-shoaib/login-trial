@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-12 col-md-4 col-lg-4 py-4 but-align">
                     <a href="/signup">
-                    <button type="button" class="round-button btn btn-outline-dark ">Create account</button>
+                    <button type="button" class="round-button btn btn-outline-dark ">Create Account</button>
                     </a>
                 </div>
             </div>
@@ -36,37 +36,20 @@
                     </div>
                 </div>
                 <div class="signin col-12 col-md-4 col-lg-4 py-3" style="background-color:#FCF5E5">
-                    <div class="signin_inside">
-                    <div class="row pb-4">
-                        <h3><b>Sign in to your account</b></h3>
+                    <div class="signin_inside pb-5">
+                    <div class="row pt-5 pb-3">
+                       <h3><b>Forgot password</b></h3><br><br><br>
+
+                        <p>Enter your email address below to receive a password link</p>
                     </div>
                     <form action="/login" method="post">
                         @csrf
                         <div class="row py-2 px-3">
-                            <input class="form-control frm" type="email" placeholder="Email" name="email" id="email">
-                        </div>
-                        <div class="row py-2 px-3">
-                            <input class="form-control frm" type="text" placeholder="Password" name="password" id="password">
+                            <input class="form-control frm" type="email" placeholder="Registered Email" name="registered_email" id="registered_email">
                         </div>
                         <div class="row pt-4 px-3">
-                            <button class="btn h-100 button" style="background-color:#FE5652; color:white;" type="submit">Sign In</button>
+                            <button class="btn h-100 button" style="background-color:#FE5652; color:white;" type="submit">Forgot Password</button>
                         </div>
-                        <div class="row text-center pt-4">
-                            <a href="/forgotpw" style="color:#FE5652; text-decoration:none;font-size: 18px">Forgot Password!</a>
-                        </div>
-                        
-                        <div class="row pt-4 px-3">
-                            <a class="btn h-100 button" href="{{route('google-auth')}}" style="background-color:#4285f4; color:white;">
-                                <span class="google_logo">
-                                    <img src="{{asset('images/google-image.png')}}" alt="google-image">
-                                </span>
-                                <span>Sign in with Google</span>
-                            </a>
-                        </div>
-                        
-                            
-                        
-
                     </form>
                     </div>
                 </div>

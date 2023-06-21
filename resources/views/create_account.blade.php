@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js">
+    </script>
+    <script src="{{asset('js/create_account_validation.js')}}"></script>
 </head>
 
 <body>
@@ -18,8 +25,8 @@
                     <img class="img-01" src="{{ asset('images/edifice-logo.jpg') }}" alt="logo">
                 </div>
                 <div class="col-12 col-md-4 col-lg-4 py-4 but-align">
-                    <a href="/signup">
-                    <button type="button" class="round-button btn btn-outline-dark ">Create account</button>
+                    <a href="/main">
+                    <button type="button" class="round-button btn btn-outline-dark ">Login</button>
                     </a>
                 </div>
             </div>
@@ -38,35 +45,29 @@
                 <div class="signin col-12 col-md-4 col-lg-4 py-3" style="background-color:#FCF5E5">
                     <div class="signin_inside">
                     <div class="row pb-4">
-                        <h3><b>Sign in to your account</b></h3>
+                        <h3><b>Create account</b></h3>
                     </div>
-                    <form action="/login" method="post">
-                        @csrf
+                    <form id="formval">
+                        <div class="row py-2 px-3">
+                            <input class="form-control frm" type="text" placeholder="Company name" name="company_name" id="company_name">
+                        </div>
+                        <div class="row py-2 px-3">
+                            <input class="form-control frm" type="text" placeholder="First name" name="first_name" id="first_name">
+                        </div>
+                        <div class="row py-2 px-3">
+                            <input class="form-control frm" type="text" placeholder="Last name" name="last_name" id="last_name">
+                        </div>
                         <div class="row py-2 px-3">
                             <input class="form-control frm" type="email" placeholder="Email" name="email" id="email">
                         </div>
                         <div class="row py-2 px-3">
                             <input class="form-control frm" type="text" placeholder="Password" name="password" id="password">
                         </div>
+                        <input type="radio" id="termsagree" value="1" name="TermsAgree">
+                        <label >I agree to the <a href="{{ asset('tnc')}}">Terms and Conditions and Privacy Policy</a></label>
                         <div class="row pt-4 px-3">
-                            <button class="btn h-100 button" style="background-color:#FE5652; color:white;" type="submit">Sign In</button>
+                            <button type="submit" class="btn h-100 button" style="background-color:#FE5652; color:white;">Create an account</button>
                         </div>
-                        <div class="row text-center pt-4">
-                            <a href="/forgotpw" style="color:#FE5652; text-decoration:none;font-size: 18px">Forgot Password!</a>
-                        </div>
-                        
-                        <div class="row pt-4 px-3">
-                            <a class="btn h-100 button" href="{{route('google-auth')}}" style="background-color:#4285f4; color:white;">
-                                <span class="google_logo">
-                                    <img src="{{asset('images/google-image.png')}}" alt="google-image">
-                                </span>
-                                <span>Sign in with Google</span>
-                            </a>
-                        </div>
-                        
-                            
-                        
-
                     </form>
                     </div>
                 </div>
