@@ -10,8 +10,6 @@ use Illuminate\Support\Facades\Hash;
 class SignupController extends Controller
 {
     public function signup(Request $request){
-        echo "hello";
-        print_r($request->all());
         $userDetails = new UserDetails;
 
         $userDetails->first_name = $request['first_name'];

@@ -15,6 +15,7 @@
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js">
     </script>
     <script src="{{asset('js/create_account_validation.js')}}"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 
 <body>
@@ -67,6 +68,9 @@
                         <input type="radio" id="termsagree" value="1" name="termsagree">
                         <label >I agree to the <a href="{{ asset('tnc')}}">Terms and Conditions and Privacy Policy</a></label>
                         <label id="termsagree-error" class="error" for="termsagree"></label>
+                        <br><br>
+                        <div class="g-recaptcha" data-sitekey="6Le4BK4mAAAAAAM2TGiiyI7wZVCrZ-e0YTkKtBCZ"></div>
+                        <div class="g-recaptcha-error"></div>
                         <div class="row pt-4 px-3">
                             <button type="submit" class="btn h-100 button" style="background-color:#FE5652; color:white;">Create an account</button>
                         </div>

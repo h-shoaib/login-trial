@@ -33,3 +33,15 @@ Route::post('signup',[SignupController::class,'signup']);
 Route::get('auth/google',[GoogleAuthController::class,'redirect'])->name('google-auth');
 
 Route::get('auth/google/call-back',[GoogleAuthController::class,'callbackGoogle']);
+
+Route::get('get-session',function(){
+    $session = session()->all();
+    echo "<pre>";
+    print_r($session);
+});
+
+Route::get('destroy-session',function(){
+    session()->forget('user_id');
+    session()->forget('name');
+    return redirect('/main');
+});

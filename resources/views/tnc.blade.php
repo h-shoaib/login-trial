@@ -5,11 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms & Conditions</title>
     <link rel="stylesheet" href="{{ asset('css/tnc.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <header>
-
+<header>
+        <div class="container-fluid">
+            <div class="row px-5" style="border-bottom: 1px solid #ececec;">
+                <div class="col-12 col-md-8 col-lg-8 p-3">
+                    <img class="img-01" src="{{ asset('images/edifice-logo.jpg') }}" alt="logo">
+                </div>
+                <div class="col-12 col-md-4 col-lg-4 py-4 but-align">
+                    <a href="/main">
+                    <button type="button" class="round-button btn btn-outline-dark ">Login</button>
+                    </a>
+                </div>
+            </div>
+        </div>
     </header>
 
     <section>
