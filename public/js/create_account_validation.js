@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    
     $.validator.addMethod("fn1", function (value,element) {
       
         let str1 = /[A-Z]/;
@@ -22,6 +23,7 @@ $(document).ready(function () {
     }),
 
         $("button[type = 'submit']").on("click", function () {
+            
             $("#formval").validate({
                 rules: {
                     first_name: "required",
@@ -69,5 +71,7 @@ $(document).ready(function () {
                     }
                 }
             })
+
+
         })
 })

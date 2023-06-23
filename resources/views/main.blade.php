@@ -15,6 +15,14 @@
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js">
     </script>
     <script src="{{asset('js/main_validation.js')}}"></script>
+    <script>
+    var msg = '{{Session::get('alert')}}';
+    var exist = '{{Session::has('alert')}}';
+    if(exist){
+      alert(msg);
+    }
+  </script>
+
 </head>
 
 <body>

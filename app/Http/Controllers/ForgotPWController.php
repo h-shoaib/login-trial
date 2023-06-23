@@ -16,7 +16,7 @@ class ForgotPWController extends Controller
         $email_data = $request['registered_email'];
         $hashed_email_data = Crypt::encryptString($email_data);
         Mail::to("nahmansaxena@gmail.com")->send(new ForgotPWMail($hashed_email_data));
-        return redirect('/main');
+        return redirect('/')->with('alert', 'Check your email to reset password!');
     }
     
     public function forgot(Request $request){

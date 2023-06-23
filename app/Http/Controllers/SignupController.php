@@ -30,8 +30,9 @@ class SignupController extends Controller
 
         $email_data = $user->user_id;
         $hashed_email_data = Crypt::encryptString($email_data);
-        Mail::to("nahmansaxena@gmail.com")->send(new WelcomeEmail($hashed_email_data));
-        return redirect('/main');
+        Mail::to("haroonshoaib32@gmail.com")->send(new WelcomeEmail($hashed_email_data));
+        
+        return redirect('/')->with('alert', 'Verification email sent!');
 
     }
 }

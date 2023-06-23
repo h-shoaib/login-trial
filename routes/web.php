@@ -12,7 +12,7 @@ use App\Http\Controllers\ForgotPWController;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Http\Request;
 
-Route::get('/main', function () {
+Route::get('/', function () {
     return view('main');
 });
 
@@ -63,7 +63,7 @@ Route::get('get-session',function(){
 Route::get('destroy-session',function(){
     session()->forget('user_id');
     session()->forget('name');
-    return redirect('/main');
+    return redirect('/')->with('alert', 'You have been logged out!');
 });
 
 Route::get('/send-email',[EmailController::class,'sendWelcomeEmail']);
