@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js">
+    </script>
+    <script src="{{asset('js/main_validation.js')}}"></script>
 </head>
 
 <body>
@@ -19,7 +26,7 @@
                 </div>
                 <div class="col-12 col-md-4 col-lg-4 py-4 but-align">
                     <a href="/signup">
-                    <button type="button" class="round-button btn btn-outline-dark ">Create Account</button>
+                    <button type="button" class="round-button btn btn-outline-dark ">Create account</button>
                     </a>
                 </div>
             </div>
@@ -36,20 +43,24 @@
                     </div>
                 </div>
                 <div class="signin col-12 col-md-4 col-lg-4 py-3" style="background-color:#FCF5E5">
-                    <div class="signin_inside pb-5">
-                    <div class="row pt-5 pb-3">
-                       <h3><b>Forgot password</b></h3><br><br><br>
-
-                        <p>Enter your email address below to receive a password link</p>
+                    <div class="signin_inside">
+                    <div class="row pb-4">
+                        <h3><b>Sign in to your account</b></h3>
                     </div>
-                    <form action="/forgotpw" method="post">
+                    <form action="/forgot" method="post" id="formval2">
                         @csrf
                         <div class="row py-2 px-3">
-                            <input class="form-control frm" type="email" placeholder="Registered Email" name="registered_email" id="registered_email">
+                            <input class="form-control frm" type="text" placeholder="Password" name="password" id="password">
                         </div>
+                        <div class="row py-2 px-3">
+                            <input class="form-control frm" type="text" placeholder="Confirm Password" name="confirm_password" id="confirm_password">
+                        </div>
+                        <input type="hidden" value={{$email}} name="email">
                         <div class="row pt-4 px-3">
-                            <button class="btn h-100 button" style="background-color:#FE5652; color:white;" type="submit">Forgot Password</button>
-                        </div>
+                            <button class="btn h-100 button" style="background-color:#FE5652; color:white;" type="submit">Sign In</button>
+                        </div>        
+                            
+
                     </form>
                     </div>
                 </div>

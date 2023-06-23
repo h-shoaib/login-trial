@@ -6,25 +6,32 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\UserDetails;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\WelcomeEmail;
 
 class SignupController extends Controller
 {
     public function signup(Request $request){
-        $userDetails = new UserDetails;
+        $user = new UserDetails;
 
-        $userDetails->first_name = $request['first_name'];
-        $userDetails->last_name = $request['last_name'];
-        $userDetails->email = $request['email'];
+        $user->first_name = $request['first_name'];
+        $user->last_name = $request['last_name'];
+        $user->email = $request['email'];
 
         if(!is_null($request['company_name'])){
-            $userDetails->company_name = $request['company_name'];
+            $user->company_name = $request['company_name'];
         }
         //encrypted password
         $password = $request['password'];
         $hashedPassword = Hash::make($password);
-        $userDetails->password = $hashedPassword;        
+        $user->password = $hashedPassword;        
+        $user->save();
 
-        $userDetails->save();
+        $email_data = $user->user_id;
+        $hashed_email_data = Crypt::encryptString($email_data);
+        Mail::to("nahmansaxena@gmail.com")->send(new WelcomeEmail($hashed_email_data));
+        return redirect('/main');
 
     }
 }

@@ -23,10 +23,11 @@ class LoginController extends Controller
                 print_r ("success");
                 $logins = new Logins;
                 $logins->email = $request['email'];
+                $logins->login_ip = $request->getClientIp();
                 $logins->save();
                 $request->session()->put('user_id',$user->user_id);
                 $request->session()->put('name',$user->first_name);
-                print_r(session()->all()); 
+                return redirect('/dashboard');
             } 
             else {
             print_r ("fail");

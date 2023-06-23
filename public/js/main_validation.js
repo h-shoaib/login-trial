@@ -10,6 +10,10 @@ $(document).ready(function (){
                     required: true,
                     minlength: 8,
                     maxlength: 16
+                },
+                confirm_password:{
+                    required:true,
+                    equalTo:password
                 }
             },
             messages:{
@@ -20,6 +24,9 @@ $(document).ready(function (){
                 password: {
                     required: "Please enter password",
                     minlength: "Needs at least 8 characters"
+                },
+                confirm_password:{
+                    required: "Please confirm password"
                 }
             }
         })
